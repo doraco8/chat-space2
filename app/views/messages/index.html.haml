@@ -1,12 +1,56 @@
 .wrapper
-  .side-bar
-    .header
 
-    .groups
+  = render 'shared/side_bar'
+
   .chat
     .header
-    
+      .left-header
+        .left-header__title
+          セレッソ大阪
+        %ul.left-header__members
+          Member:
+          %li.member
+            岡ちゃん
+          %li.member
+            柿谷
+          %li.member
+            
+      .right-header
+        .right-header__button
+          Edit  
     .messages
-
+      .message
+        .upper-message
+          .upper-message__user-name
+            清武
+          .upper-message__date
+            2019/05/04
+        .lower-meesage
+          .lower-message__content
+            セレッソの１０番。
+      .message
+        .upper-message
+          .upper-message__user-name
+            都倉
+          .upper-message__date
+            2019/05/16
+        .lower-meesage
+          .lower-message__content
+            怪我を早く治す。
+      .message
+        .upper-message
+          .upper-message__user-name
+            ソウザ
+          .upper-message__date
+            2019/05/19
+        .lower-meesage
+          .lower-message__content
+            ゴールを今度も決めます。
     .form
-  
+      %form
+        %input.form__message
+        .form__mask
+          %label.form__mask__image
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+        %input.form__submit{type: 'submit', value: 'Send'}
